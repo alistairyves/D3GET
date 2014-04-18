@@ -27,7 +27,15 @@ pp = pprint.PrettyPrinter(indent=1)
 pp.pprint(profileData)
 
 print type(profileData)
-heroes = (profileData["heroes"])
-print heroes
-for item in heroes:
-	print "%s\t\t%s\t\t%s" % (item["name"], item["level"], item["class"])
+if "code" in profileData.keys():
+	print "code is in"
+	if(profileData["code"]=="NOTFOUND"):
+		print "not found"
+		exit()
+
+print "its a good one lewl"
+
+#heroes = (profileData["heroes"])
+#print heroes
+#for item in heroes:
+	#print "%s\t\t%s\t\t%s" % (item["name"], item["level"], item["class"])
