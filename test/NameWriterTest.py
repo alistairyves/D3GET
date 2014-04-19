@@ -1,11 +1,19 @@
 import unittest
+import os
 
-import NameWriter
+#import bin.NameWriter
+#import D3GET.bin.NameWriter
+from .bin.NameWriter import NameWriter
+print "1"
 
 class NameWriterTest(unittest.TestCase):
+    print "2"
     
-    def setup(self):
-        print "its set up"
+    def testNameWrite_write_bad_test(self):
+        self.assertEquals(NameWriter(12,12), "BadArguments")
+        
+def main():
+    unittest.main()
     
-    def NameWrite_write_bad_test(self):
-        assertEquals(NameWriter(12,12), "BadArguments")
+if __name__ == '__main__':
+    main()
