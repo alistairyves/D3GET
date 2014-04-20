@@ -2,16 +2,21 @@ import unittest
 import os
 import sys
 sys.path.append('/home/alistair/git/D3GET/bin/')
-import NameWriter
+from name_writer import NameWriter
+import json
+import simplejson
 
 
 class NameWriterTest(unittest.TestCase):
     
-    def testNameWrite_write_notstrings(self):
-        self.assertEquals(NameWriter.write(12,12), 'Bad Arguments')
+    def setUp(self):
+        print "Setting up"
+        #nw = NameWriter()
         
     def testNameWrite_write_badnumber(self):
-        self.assertEquals(NameWriter.write('blah', '12344'), 'invalid battlenumber length')
+        nw = NameWriter()
+        self.assertEquals(nw.write(battlename='blah', battlenumber='12344'), 'invalid battlenumber length')
+    
 def main():
     unittest.main()
     
